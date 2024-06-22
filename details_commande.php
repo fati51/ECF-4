@@ -41,13 +41,44 @@ $details->execute([$commande_id]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails de la Commande</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c3e6cb;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tous_lesjeux.php">Tous les jeux</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">Deconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
     <div class="container">
-        <h1>Détails de la Commande</h1>
+        <h1 style="color : white" >Détails de la Commande</h1>
         <h2>Commande passée le <?php echo $commande['date_commande']; ?></h2>
-        <table class="table table-striped">
+        <table class="table table-striped" style="color : white">
             <thead>
                 <tr>
                     <th>Jeu</th>

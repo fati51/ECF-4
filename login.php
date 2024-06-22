@@ -19,7 +19,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $user = $checkUser->fetch(PDO::FETCH_ASSOC);
         if (password_verify($password, $user['mot_de_passe'])) {
             $_SESSION['user_id'] = $user['id'];
-            header('Location: tous_lesjeux.php'); // Rediriger vers la page principale après la connexion
+            header('Location:espace_user.php'); // Rediriger vers la page principale après la connexion
             exit();
         } else {
             echo 'Mot de passe incorrect';
@@ -38,10 +38,32 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<body>
+<style>
+a {
+    text-decoration: none;
+    color: #fff; 
+}
+
+div {
+    color: white;
+}
+
+.navbar-nav li:not(:last-child) {
+    margin-right: 30px;
+}
+</style>
+<div class="video-background">
+    <video autoplay muted loop id="bg-video">
+      <source src="images/back.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 <body>
     
 <form method="POST">
