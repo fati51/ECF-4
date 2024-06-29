@@ -9,7 +9,7 @@ try {
 }
 
 // Vérifiez si l'utilisateur est connecté et est un employeur
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'employeur') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] == 'employeur') {
     die('Vous devez être connecté en tant qu\'employeur pour accéder à cette page.');
 }
 

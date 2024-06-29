@@ -36,35 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Connexion administrateur</title>
 </head>
 <body>
-<style>
-       body {
-    margin: 0;
-    padding: 0;
-}
 
 
-
-a {
-    text-decoration: none;
-    color: #fff; 
-}
-
-.group{
-    color: white;
-    
-}
-
-
-
-
-.navbar-nav li:not(:last-child) {
-    margin-right: 30px;
-}
-h1{
-    color : white;
-}
-
-    </style>
 
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #747e88;">
     <div class="container-fluid">
@@ -79,16 +52,24 @@ h1{
         </div>
     </div>
 </nav>
-    <h1>Connexion administrateur</h1>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
+    <h1 style="color : white" >Connexion administrateur</h1>
     <?php if (isset($error)) { ?>
         <p><?php echo $error; ?></p>
     <?php } ?>
     <div class ="group">
     <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-        <label for="username">Nom d'utilisateur :</label>
+        <label for="username" style="color : white" >Nom d'utilisateur :</label>
         <input type="text" name="username" required><br>
 
-        <label for="password">Mot de passe :</label>
+        <label for="password"  style="color : white" >Mot de passe :</label>
         <input type="password" name="password" required><br>
     </div>
     <button type="submit" class="btn btn-success">Connexion</button>

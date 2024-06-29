@@ -33,8 +33,8 @@ if(isset($_GET['search']) AND !empty($_GET['search'])){
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c3e6cb;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">GameStore</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="index.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
@@ -49,7 +49,7 @@ if(isset($_GET['search']) AND !empty($_GET['search'])){
           <a class="nav-link" href="tous_lesjeux.php">Tous les jeux</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="espace_user.php">Mon espace</a>
+          <a class="nav-link" href="login.php">Connexion</a>
         </li>
       </ul> 
       <form class="d-flex" role="search" method="GET">
@@ -60,6 +60,14 @@ if(isset($_GET['search']) AND !empty($_GET['search'])){
   </div>
 </nav> 
 <br>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
 
 <?php while($jeuInfo = $allJeux->fetch()) { ?>
 <div class="container">

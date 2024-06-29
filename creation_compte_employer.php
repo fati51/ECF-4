@@ -1,4 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+session_start();
+
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    die('Accès refusé : vous devez être un administrateur pour accéder à cette page.');
+}
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -6,6 +14,7 @@ $dbname = "gamestore";
 
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pseudo = $_POST['pseudo'];
@@ -27,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmtInsertUser = $conn->prepare($sqlInsertUser);
         $stmtInsertUser->execute([$pseudo, $mail, $hashedPassword, $role]);
 
-        header('Location: login_employer.php');
+        header('Location: espace_admin.php');
         exit();
     }
 }
@@ -41,55 +50,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Créer un compte utilisateur</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        div {
-            color: white;
-        }
-
-        .navbar-nav li {
-            text-align: left;
-        }
-
-        .navbar-nav li:not(:last-child) {
-            margin-right: 30px;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        .form-group {
-            max-width: 400px;
-        }
-    </style>
+    
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #747e88;">
+<nav class="navbar navbar-expand-md navbar-dark"  style="background-color: #c3e6cb;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="espace_admin.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
+    <a class="navbar-brand" href="espace_admin.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-               
+                
                 <li class="nav-item">
-                    <a href="espace_admin.php">Page d'acceuil admin </a>
-              
+                    <a class="nav_link" href="espace_admin.php">Page d'acceuil admin </a>
+              </li>
             </ul>
         </div>
     </div>
 </nav>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
 <h1 class="text-center mb-4">Créer un compte utilisateur</h1>
 <form action="" method="POST">
     <div class="form-group">

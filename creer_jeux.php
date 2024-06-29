@@ -4,6 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    die('Accès refusé : vous devez être un administrateur pour accéder à cette page.');
+}
+
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=gamestore', 'root', 'root');
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -66,40 +70,11 @@ if (isset($_POST['valider'])) {
     <title>Ajout de jeu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        div {
-            color: white;
-        }
-
-        .navbar-nav li {
-            text-align: left;
-        }
-
-        .navbar-nav li:not(:last-child) {
-            margin-right: 30px;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        .form-group {
-            max-width: 400px;
-        }
-    </style>
+   
+       
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #747e88;">
+<nav class="navbar navbar-expand-md navbar-dark"  style="background-color: #c3e6cb;">
     <div class="container-fluid">
     <a class="navbar-brand" href="espace_admin.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,14 +84,22 @@ if (isset($_POST['valider'])) {
             <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item">
-                    <a href="espace_admin.php">Page d'acceuil admin </a>
-              
+                    <a class="nav_link" href="espace_admin.php">Page d'acceuil admin </a>
+              </li>
             </ul>
         </div>
     </div>
 </nav>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
 <div class="container">
-    <h1>Ajouter un jeu vidéo</h1>
+    <h1 style="color : white" >Ajouter un jeu vidéo</h1>
     <form method="POST" enctype="multipart/form-data" class="form-group">
         <div class="form-group">
             <label>Libellé :</label>

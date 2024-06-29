@@ -169,7 +169,7 @@ $panier->execute([$user_id]);
         </table>
         <button type="submit" name="update_cart" class="btn btn-primary">Mettre à jour le panier</button>
         <button type="submit" name="valider_commande" class="btn btn-success">Valider la commande</button>
-    </form>
+    </form><br><br>
     <a href="tous_lesjeux.php" class="btn btn-secondary">Continuer vos achats</a>
 </div>
 </body>

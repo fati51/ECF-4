@@ -18,19 +18,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav_link nav-link" href="logout_admin.php">Déconnexion</a>
+                    <a class="nav_link nav-link" href="logout_employeur.php">Déconnexion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav_link nav-link" href="creer_jeux.php">Ajouter un jeu</a>
+                    <a class="nav_link nav-link" href="graphique.html">graphique de l'entrprise</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav_link nav-link" href="admin_update_stock.php">Gestion de stock</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav_link nav-link" href="tous_lesjeux.php">Liste des jeux</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav_link nav-link" href="creation_compte_employer.php">Création compte</a>
+                    <a class="nav_link nav-link" href="view_orders.php">Validation des commandes</a>
                 </li>
             </ul>
         </div>
@@ -44,15 +38,3 @@
                     Your browser does not support the video tag.
                 </video>
             </div> 
-<div>
-<h1 class="text-center">Espace administrateur </h1>
-
-<p class="text-center">Bienvenue, administrateur !</p>
-    </div>
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>

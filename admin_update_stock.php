@@ -48,25 +48,12 @@ if (isset($_POST['update_stock'])) {
     <title>Admin - Mettre à jour le stock</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-       
-        a {
-            text-decoration: none;
-            color: #fff; 
-        }
-        div {
-            color: white;
-        }
-        
-        
-        .navbar-nav li:not(:last-child) {
-            margin-right: 20px;
-        }
-    </style>
+
+ 
     <title>Espace administrateur</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #747e88;">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #c3e6cb;">
     <div class="container">
     <a class="navbar-brand" href="espace_admin.php"><img src="./images/logo.jpg" alt="Logo" width="60"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,10 +68,18 @@ if (isset($_POST['update_stock'])) {
         </div>
     </div>
 </nav>
+<div class="row">
+        <div class="col-md-12">
+            <div class="video-background">
+                <video autoplay muted loop id="bg-video" class="w-100">
+                    <source src="images/back.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div> 
 </head>
 <body>
     <div class="container">
-        <h1>Admin - Mettre à jour le stock</h1>
+        <h1 style="color : white" >Admin - Mettre à jour le stock</h1>
         <form method="POST" action="">
             <div class="form-group">
                 <label for="jeu_id">Jeu Vidéo</label>
