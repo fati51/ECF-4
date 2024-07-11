@@ -98,8 +98,8 @@ if (isset($_POST['valider'])) {
                     Your browser does not support the video tag.
                 </video>
             </div> 
-<div class="container">
-    <h1 style="color : white" >Ajouter un jeu vidéo</h1>
+<div class="container"style="color : white" >
+    <h1  >Ajouter un jeu vidéo</h1>
     <form method="POST" enctype="multipart/form-data" class="form-group">
         <div class="form-group">
             <label>Libellé :</label>

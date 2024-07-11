@@ -69,29 +69,26 @@ if(isset($_GET['search']) AND !empty($_GET['search'])){
                 </video>
             </div> 
 
-<?php while($jeuInfo = $allJeux->fetch()) { ?>
-<div class="container">
-    <div class="row justify-content">
-        <div class="col-md-5">
-            <div class="card">
-                <h5 class="card-header"><?= $jeuInfo['libelle'] ?></h5>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <img src="<?= $jeuInfo['image'] ?>" alt="Image of <?= $jeuInfo['libelle'] ?>" class="img-fluid">
+            <div class="container">
+    <div class="row">
+        <?php while ($jeuInfo = $allJeux->fetch()) { ?>
+            <div class="col-md-4 mb-4"> 
+                <div class="card h-100">
+                    <h5 class="card-header"><?= $jeuInfo['libelle'] ?></h5>
+                    <div class="card-body">
+                        <img src="<?= $jeuInfo['image'] ?>" alt="Image de <?= $jeuInfo['libelle'] ?>" class="img-fluid mb-3">
+                        <p class="card-text">PEGI <?= $jeuInfo['pegi'] ?></p>
+                        <p class="card-text">Prix <?= $jeuInfo['prix'] ?> €</p>
+                        <a href="ajoute_jeu_panier.php?id=<?= $jeuInfo['id'] ?>" class="btn btn-success">Ajouter au panier</a>
+                        <a href="details.php?id=<?= $jeuInfo['id'] ?>" class="btn btn-primary">En savoir plus</a>
                     </div>
-                    <div class="my-3">
-                        <small>PEGI <?= $jeuInfo['pegi'] ?></small>
-                    </div>
-                    <div class="my-3">
-                        <small>Prix <?= $jeuInfo['prix'] ?> €</small>
-                    </div>
-                    <a href="ajoute_jeu_panier.php?id=<?=$jeuInfo['id']?>" class="btn btn-secondary">Ajouter au panier</a>
                 </div>
             </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
-<br>
-<?php } ?>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+2wkq5ZlFW73E/pm0/2b2taK/6vO9xJ7an2" crossorigin="anonymous"></script>
 </body>
 </html>

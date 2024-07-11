@@ -83,8 +83,10 @@ div {
             </div>
             <button type="submit" class="btn btn-success" name="valider">Connectez-vous</button>
             <br>
-            
+            <a href="inscription_user.php">Inscrivez_vous</a>
+            <br>
             <a href="mode_de_passe_user.php">Mode passe oubliee</a>
+           
         </div>
     </div>
 </div>
