@@ -97,31 +97,42 @@ if (isset($_POST['valider'])) {
       Your browser does not support the video tag.
     </video>
   </div>
-    <form method="POST" class="container" style="color:white ;" >
-        <p>Création de compte</p>
-        <div class="form-group">
-            <label>Nom</label>
-            <input type="text" class="form-control" name="nom">
-        </div>
-        <div class="form-group">
-            <label>Prénom</label>
-            <input type="text" class="form-control" name="prenom">
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" class="form-control" name="email">
-        </div>
-        <div class="form-group">
-            <label>Adresse postale</label>
-            <input type="text" class="form-control" name="adresse_postale">
-        </div>
-        <div class="form-group">
-            <label>Mot de passe</label>
-            <input type="password" class="form-control" name="password">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary" name="valider">Inscription</button>
-    </form>
+  <body style="background-color: #343a40; color: white;">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form method="POST" class="container">
+          <p class="h4">Création de compte</p>
+          <div class="form-group mb-3">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="prenom">Prénom</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="adresse_postale">Adresse postale</label>
+            <input type="text" class="form-control" id="adresse_postale" name="adresse_postale" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="password" class="form-label"><b>Mot de passe</b></label>
+            <input type="password" class="form-control" id="password" name="password" required
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                   title="Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et être d'au moins 8 caractères.">
+            <div id="passwordHelpBlock" class="form-text" style="color : white">
+              Votre mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et être d'au moins 8 caractères.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" name="valider">Inscription</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 

@@ -1,13 +1,13 @@
 app = "gamestore"  # Remplacez par le nom de votre application
 
 [build]
-  image = "dockerfile"  # Assurez-vous que c'est bien "dockerfile" et non "Dockerfile"
+  builder = "heroku/buildpacks:20"
 
 [env]
-  PORT = "80"
+  PORT = "8080"  # Port sur lequel votre application PHP écoute (modifiez-le si nécessaire)
 
 [[services]]
-  internal_port = 80
+  internal_port = 8080  # Port interne de l'application PHP (modifiez-le si nécessaire)
   protocol = "tcp"
 
   [[services.ports]]
@@ -23,5 +23,9 @@ app = "gamestore"  # Remplacez par le nom de votre application
     timeout = "2s"
     grace_period = "1s"
     restart_limit = 0
+
+
+
+
 
 

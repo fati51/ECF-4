@@ -77,10 +77,9 @@ div {
                 <input type="email" class="form-control" name="email" required>
             </div>
          
-            <div class="form-group">
-                <label for="MotDePasse"><b>Mot de passe</b></label>
-                <input type="password" class="form-control" name="password"  >
-            </div>
+            <label for="MotDePasse" class="form-label"><b>Mot de passe</b></label>
+          <input type="password" class="form-control" id="password" name="password" required>
+          <div id="passwordHelpBlock" class="form-text">
             <button type="submit" class="btn btn-success" name="valider">Connectez-vous</button>
             <br>
             <a href="inscription_user.php">Inscrivez_vous</a>
